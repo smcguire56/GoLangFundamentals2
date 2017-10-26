@@ -1,15 +1,14 @@
 package main
 
 import (
-	"fmt"
   	"net/http"
 )
 
 func printString(w http.ResponseWriter, r *http.Request){
-	
-	w.Header().Set("Content-Type", "text/plain")
-	fmt.Fprint(w, "<h1>Guessing Game</h1>")
 
+	w.Header().Set("Content-Type","text/html");// allows browser to render html tags
+	//fmt.Fprint(w, "<h1>Guessing Game</h1>")
+	http.ServeFile(w, r,"index.html")
 }
 
 func main() {
