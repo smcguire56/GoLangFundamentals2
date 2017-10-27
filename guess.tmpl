@@ -12,9 +12,12 @@
   <body>
     <h1>{{.Title}}</h1> <br />
     <form action="/guess" method="GET" class="form-inline">      
-      <input id="guessInput" type="number"> <br /><br />
-      <input type="button" class="btn btn-info" value="Guess!!">
+      <input id="guessInput" type="number" name="guess"> <br /><br />
+      <input type="submit" class="btn btn-info" value="Guess!!">
       </form>
+
+       <p>You Guessed {{.Guess}}</p>
+      <p>{{.Message}}</p>
 
     <a href="guess/">Home</a>
 
